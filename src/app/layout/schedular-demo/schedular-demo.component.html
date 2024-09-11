@@ -1,0 +1,81 @@
+<div class="control-section sererra_e_schedule">
+    <div class="drag-sample-wrapper d-flex">
+        <div class="schedule-container">
+            <ejs-schedule  #scheduleObj cssClass='schedule-drag-drop' width='%' height='' [group]="group"
+                [currentView]="currentView" [selectedDate]="selectedDate" [workHours]="workHours" [eventSettings]="eventSettings"
+                (actionBegin)="onActionBegin($event)" (drag)="onItemDrag($event)" >
+                <e-resources>
+                    <e-resource field='DepartmentID' title='Department' name='Departments' [dataSource]='departmentDataSource'
+                        textField='Text' idField='Id' colorField='Color'>
+                    </e-resource>
+                    <e-resource field='ConsultantID' title='Consultant' name='Consultants' [dataSource]='consultantDataSource'
+                        [allowMultiple]='allowMultiple' textField='Text' idField='Id' groupIDField="GroupId" colorField='Color'>
+                    </e-resource>
+                </e-resources>
+                <ng-template #resourceHeaderTemplate let-data >
+                    <div class="template-wrap">
+                        <div class="specialist-category" *ngIf="!getConsultantStatus(data)">
+                                Los angels
+                        </div>
+                                @for (item of consultantDataSource; track $index) {
+                                    <div *ngIf="getConsultantStatus(data)" class="job-cards">
+                                        <div>
+                                            <div class="short_name white_text_color border_radius_100 d-flex align-items-center justify-content-center font_size_12px">{{item.shortName}}</div>
+                                        </div>
+                                        <div>
+                                            <div class="manager-name roboto-medium">{{item.Text}}</div>
+                                            <div class="jobs font_size_12px">{{item.Designation}}</div>
+                                        </div>
+                                    </div>
+                                }
+                        </div>
+                   
+                </ng-template>
+                <e-views>
+                    <e-view option='TimelineDay'></e-view>
+                    <e-view option='TimelineMonth'></e-view>
+                </e-views>
+            </ejs-schedule>
+        </div>
+        <div class="treeview-container">
+            <div class="d-flex align-items-center">
+                <div class="filter-button">
+                    <button>
+                        <img src="assets/images/Icon_settings.svg" alt="">
+                           <span>Filters</span> 
+                        <img src="assets/images/Icon-feather-chevron-left.svg" alt="">
+                    </button>
+                </div>
+                <div class="search d-flex align-items-center">
+                    <img src="assets/images/Icon-search.svg" alt="">
+                    <input type="text" placeholder="Search">
+                </div>
+            </div>
+            <div class="results d-flex align-items-center justify-content-between">
+                <span>10 results</span>
+                <div>
+                    <img src="assets/images/Icon_sort.svg" alt="">
+                    <span class="priority">Priority</span>
+                    <img src="assets/images/Icon_chevron.svg" alt="">
+                </div>
+            </div>
+            <ejs-treeview [nodeTemplate]='nodeTemplate' #treeObj [fields]='field' cssClass='treeview-external-drag' [allowDragAndDrop]='allowDragAndDrop'
+                (nodeDragStop)="onTreeDragStop($event)" (nodeDragging)="onItemDrag($event)"></ejs-treeview>
+                <ng-template #nodeTemplate let-data>
+                    <div>
+                        <div class="loc-war font_size_12px secondary_color">{{ data.Name }}</div>
+                        <div class="loc-war roboto-medium">{{ data.Description }}</div>
+                        <div class="d-flex loc-war align-items-center font_size_12px tertiary_color">
+                            <img src="assets/images/Ico_ pin.svg" alt="">
+                            <div>{{ data.Place }}</div>
+                        </div>
+                        <div class="d-flex loc-war align-items-center font_size_12px tertiary_color">
+                            <img src="assets/images/Icon_status_high.svg" alt="">
+                            <div>{{ data.Warantty }}</div>
+                        </div>
+                      </div>
+                </ng-template>
+                
+        </div>
+    </div>
+</div>

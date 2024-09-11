@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="5.414" height="10" viewBox="0 0 5.414 10">
+  <g id="Icon_chevron" data-name="Icon chevron" transform="translate(-264.793 -300.5)">
+    <path id="Icon_feather-chevron-left" data-name="Icon feather-chevron-left" d="M15.5,13l-2-2,2-2" transform="translate(278.5 287.5) rotate(90)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="Icon_feather-chevron-left-2" data-name="Icon feather-chevron-left" d="M2,0,0,2,2,4" transform="translate(265.5 310) rotate(-90)" fill="none" stroke="#707070" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+  </g>
+</svg>

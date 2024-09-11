@@ -1,0 +1,74 @@
+.job-cards{
+    display: none;
+    align-items: center;
+    &:first-child{
+        display: flex;
+    }
+    .short_name{
+        width: 34px;
+        height: 34px;
+        background: #4A729D;
+        margin-right: 10px;
+    }
+    .jobs{
+        color: #707070;
+    }
+}
+.treeview-container{
+    padding: 15px 15px 17px 15px;
+    border-left:1px solid rgba(229, 231, 241, 1);
+    width: 345px;
+    ejs-treeview{
+        width: 345px;
+    }
+    .search{
+        height: 34px;
+        min-height: 34px;
+        border: 1px solid rgba(229, 231, 241, 1);
+        background: #fff;
+        justify-content: center;
+        color: rgba(110, 109, 122, 1);
+        border-radius: 8px;
+        padding: 0 10px;
+        margin-left: 10px;
+        img{
+            width: 14px;
+            height: 14px;
+        }
+        input{
+            border: none;
+            outline: none;
+            margin-left: 8px;
+        }
+    }
+    .filter-button{
+        button{
+            height: 34px;
+            min-height: 34px;
+            border: 1px solid rgba(229, 231, 241, 1);
+            background: #fff;
+            justify-content: center;
+            color: rgba(110, 109, 122, 1);
+            border-radius: 8px;
+            padding: 0 10px;
+            span{
+                margin: 0 4px;
+            }
+        }
+    }
+    .results{
+        margin:10px 0;
+        .priority{
+            margin: 0 8px;
+        }
+    }
+    .loc-war{
+        margin-bottom: 8px;
+        &:last-child{
+            margin-bottom: 0;
+        }
+        img{
+            margin-right: 8px;
+        }
+    }
+}
